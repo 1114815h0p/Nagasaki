@@ -1,4 +1,4 @@
 # Nagasaki
 Batch Email Bomber
 
-To start Nagasaki just open Nagasaki.bat and follow instructions
+To start spamming just open Nagasaki.bat and follow instructions
