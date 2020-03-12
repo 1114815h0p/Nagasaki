@@ -1,4 +1,4 @@
 # Nagasaki
 Batch Email Bomber
 
-To start spamming just open Nagasaki.bat and follow instructions
+First, edit Ngasaki.bat (change "YOUR_EMAIL@gmail.com" to your email adress, and "YOUR_PASSWORD" to your password). Now Nagasaki is redy to spam!
