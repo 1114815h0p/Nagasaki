@@ -46,28 +46,36 @@ exit
 :skip
 
 ::TIMER
+:tt
 echo Set spam timer? [Y]es/[N]o
 set /p timer=
 if %timer%==n goto skip1
 if %timer%==N goto skip1
-if %timer%==y echo Type time in seconds
-if %timer%==Y echo Type time in seconds
+if %timer%==y goto sub && echo Type time in seconds
+if %timer%==Y goto sub && echo Type time in seconds
+goto tt
+:sub
 set /p timer_time=
-type NUL > timer.bat
-echo timeout ^/t %timer_time% ^/NOBREAK >> timer.bat
-echo del %%0 ^&^& taskkill /F /T /IM cmd.exe >> timer.bat
-echo exit >> timer.bat
+echo (+) Timer set!
+type NUL> timer.bat
+echo timeout ^/t %timer_time% ^/NOBREAK>> timer.bat
+echo taskkill ^/fi "windowtitle eq Nagasaki - Email Bomber" ^/im cmd.exe>> timer.bat
+echo del %%0 ^&^& exit>> timer.bat
 start /MIN timer.bat
 :skip1
 
 ::COUNT
+:cc
 echo Set mails count? [Y]es/[N]o
 set /p userinput=
 if %userinput%==n goto skip2
 if %userinput%==N goto skip2
-if %userinput%==y echo Set mails count
-if %userinput%==Y echo Set mails count
+if %userinput%==y goto sub1 && echo Set mails count
+if %userinput%==Y goto sub1 && echo Set mails count
+goto cc
+:sub1
 set /p count=
+echo (+) Mails count set!
 :skip2
 
 echo.
